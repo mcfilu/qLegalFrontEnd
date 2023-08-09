@@ -15,7 +15,7 @@ const About = () => {
 
     useEffect(() => {
         axios
-        .get("http://127.0.0.1:8000/api/team/")
+        .get("http://140.238.68.12/api/team/")
            .then(res => setTeam(res.data))
            .catch((err) => console.log(err));
         
@@ -63,7 +63,7 @@ const About = () => {
                     yearly_team[cu_year].map((cu_team, index) => (
                         <div className={`flex bg-black-gradient w-[1000px] h-[200px] rounded-[10px] mt-16 `}>
                             <div className={`w-[200px]`}>
-                                <img src={cu_team.image} className={`w-[150px] h-[150px] rounded-full ml-6 mt-7`}></img>
+                                <img src={cu_team.image} className={`w-[150px] h-[150px] rounded-full ml-6 mt-7 object-cover`}></img>
                             </div>
                             <div className={`w-[700px] flex flex-col`}>
                                 <h1 className={`text-white font-poppins text-[25px] mt-4 ml-4`}>{cu_team.name} {cu_team.surname}  -  {cu_team.position}</h1>

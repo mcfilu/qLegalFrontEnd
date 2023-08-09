@@ -15,7 +15,7 @@ const Speakers = () => {
 
     useEffect(() => {
         axios
-        .get("http://127.0.0.1:8000/api/speakers/")
+        .get("http://140.238.68.12/api/speakers/")
            .then(res => setSpeakers(res.data))
            .catch((err) => console.log(err));
         

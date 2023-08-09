@@ -1,7 +1,7 @@
 {
   "name": "qlegal",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "http://140.238.68.12/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

@@ -14,7 +14,7 @@ const Footer = () => {
 
     useEffect(() => {
         axios
-            .get("http://127.0.0.1:8000/api/podcast_links/")
+            .get("http://140.238.68.12/api/podcast_links/")
                 .then(res => setMedia(res.data))
                     .catch((err) => console.log(err));
     })
@@ -23,7 +23,7 @@ const Footer = () => {
 
     useEffect(() => {
         axios
-        .get("http://127.0.0.1:8000/api/social_media_links/")
+        .get("http://140.238.68.12/api/social_media_links/")
           .then(res => setSM(res.data))
           .catch((err) => console.log(err));
         console.log(sm);
@@ -32,7 +32,7 @@ const Footer = () => {
 
      useEffect(() => {
         axios
-        .get("http://127.0.0.1:8000/api/podcast_links/")
+        .get("http://140.238.68.12/api/podcast_links/")
           .then(res => setPodcasts(res.data))
           .catch((err) => console.log(err));
 

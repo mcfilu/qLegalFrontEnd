@@ -8,7 +8,7 @@ const Listen = () => {
 
     useEffect(() => {
         axios
-            .get("http://127.0.0.1:8000/api/podcast_links/")
+            .get("http://140.238.68.12/api/podcast_links/")
                 .then(res => setMedia(res.data))
                     .catch((err) => console.log(err));
     })
