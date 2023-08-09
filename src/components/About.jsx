@@ -15,7 +15,7 @@ const About = () => {
 
     useEffect(() => {
         axios
-        .get("http://140.238.68.12/api/team/")
+        .get("https://server.yourslawfully.com/api/team/")
            .then(res => setTeam(res.data))
            .catch((err) => console.log(err));
         

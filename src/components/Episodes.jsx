@@ -61,7 +61,7 @@ const Episodes = () => {
 
     useEffect(() => {
         axios
-        .get("http://140.238.68.12/api/episodes/")
+        .get("https://server.yourslawfully.com/api/episodes/")
            .then(res => setEpisodes(res.data))
            .catch((err) => console.log(err));
         

@@ -1,7 +1,7 @@
 {
   "name": "qlegal",
   "private": true,
-  "proxy": "http://140.238.68.12/",
+  "proxy": "https://server.yourslawfully.com/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
