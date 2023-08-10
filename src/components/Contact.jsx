@@ -2,10 +2,11 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <section className={`mt-12 flex flex-row`}>
-      <div className={`hidden md:flex flex-row`}>
+    <section className={`mt-6 flex flex-row`}>
+      <div className={`hidden md:flex flex-col`}>
 
-        <p className={``}>Contact Us</p>
+        <p className={`text-white text-[40px] font-poppins text-center mb-6`}>Contact Us</p>
+        <div className={`flex flex-row w-full`}>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1241.3882772519337!2d-0.11975060477844679!3d51.51731524881428!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3524d7a3dd%3A0xa6a6ac61abc5a7c0!2sCentre%20for%20Commercial%20law%20Studies!5e0!3m2!1spl!2suk!4v1676478975368!5m2!1spl!2suk"  width="750" height="600" style={{border: "0"}} allowFullScreen="" loading="lazy" className={`rounded-[10px]`} referrerPolicy="no-referrer-when-downgrade"></iframe>
         <div className={`flex flex-col ml-16`}>
             <div className={`bg-black-gradient-2 p-4 rounded-[10px]`}>
@@ -26,6 +27,7 @@ const Contact = () => {
             </div>
             
 
+        </div>
         </div>
       </div>
 

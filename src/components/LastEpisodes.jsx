@@ -58,6 +58,7 @@ const LastEpisodes = () => {
     const yearly_episodes = {};
     const [year, setYear] = useState(current_year);
     const [episodes, setEpisodes] = useState([]);
+    const [links, setLinks] = useState([]);
 
     const [LModal, setLModal] = useState(false);
     const [buttonVis, setButtonVis] = useState(true);
@@ -67,10 +68,20 @@ const LastEpisodes = () => {
     useEffect(() => {
         axios
         .get("https://server.yourslawfully.com/api/episodes/")
-           .then(res => setEpisodes(res.data))
+           .then(res => {
+            const reversedEpisodes = res.data.reverse();
+            setEpisodes(reversedEpisodes);
+           })
            .catch((err) => console.log(err));
         
     }, []);
+
+    useEffect(() => {
+        axios
+        .get("https://server.yourslawfully.con/api/podcast_links/")
+        .then(res => {setEpisodes(res.data);})
+        .catch((err) => console.log(err));
+    })
     // console.log(episodes);
 
     for (let i = 0; i < episodes.length; i++) {
@@ -93,7 +104,7 @@ const LastEpisodes = () => {
     // console.log(yearly_episodes);
 
     function changeEpisodes(){
-        console.log(episodes);
+        // console.log(episodes);
         changeNum((prevNum) => {
             const newVal = prevNum + 5;
             if (newVal > episodes.length){
@@ -116,6 +127,7 @@ const LastEpisodes = () => {
       
     
 
+    // console.log(episodes);
   return (
     <section id="home" className={`sm:py-12 `}>
 
@@ -124,19 +136,9 @@ const LastEpisodes = () => {
                 <div className={`bg-slate-200 p-2 rounded-[10px] w-[500px] h-[400px]`} onClick={e => e.stopPropagation()}>
                     <h1 className={`font-poppins font-normal text-[35px] flex justify-center text-center`}>Listen to this episode on:</h1>
                     <div className={`flex items-center flex-col justify-center mt-4 `}>
-                        
-                            {episodes[currentEp] && (
-                            <a  className={`${episodes[currentEp]["spotify_link"] ? '' : 'hidden'} justify-center flex mt-4 w-[200px]`} href={episodes[currentEp]["spotify_link"]}><img src={spotifyPodcasts} className={`w-[200px]`}></img></a>
-                            )}
-                            {episodes[currentEp] && (
-                            <a  className={`${episodes[currentEp]["apple_link"] ? '' : 'hidden'} justify-center flex mt-4 w-[200px]`} href={episodes[currentEp]['apple_link']}><img src={applePodcast} className={`w-[200px]`}></img></a>
-                            )}
-                            {episodes[currentEp] && (
-                            <a  className={`${episodes[currentEp]["overcast_link"] ? '' : 'hidden'} justify-center flex mt-4 w-[200px]`} href={episodes[currentEp]['overcast_link'] ? '' : ''}><img src={overcastPodcast} className={`w-[200px]`}></img></a>
-                            )}
-                            {episodes[currentEp] && (
-                            <a  className={`${episodes[currentEp]["buzzsprout_link"] ? '' : 'hidden'} justify-center flex mt-4 w-[200px]`} href={episodes[currentEp]['buzzsprout_link'] ? '' : ''}><img src={buzzsproutPodcast} className={`w-[200px]`}></img></a>
-                            )}
+                        {links.map((item, index) => (
+                            <a key={index} className={` justify-center flex mt-4 w-[200px]`} href={item.link}><img src={item.icon} className={`w-[200px]`}></img></a>
+                        ))}
                         
                     
                     </div>
@@ -153,20 +155,20 @@ const LastEpisodes = () => {
                         {
                             episodes.map((epi, ind) => (
                                 <div key={epi.id} className={`mt-12 ${ind < currentNum ? '' : 'hidden'} episode`}>
-                                    <div className={`flex flex-row w-[1000px] h-[200px] bg-black-gradient-2 rounded-[10px] `}>
-                                        <div className={`w-[200px]`}>
+                                    <div className={`flex flex-row w-[1000px] min-h-[200px] bg-black-gradient-2 rounded-[10px] `}>
+                                        <div className={`w-[200px] flex items-center`}>
                                             <img src={epi.image} className={`w-[170px] h-[170px] items-center justify-center m-4 rounded-[10px]`}></img>
                                         </div>
                                         
-                                        <div className={`flex flex-col w-[650px] pl-8 mt-2`}>
-                                            <div className={`h-[40px]`}>
-                                                <h2 className={`font-poppins text-white mt-3 text-[18px] mb-2 max-w-[650px]`}>{epi.title}</h2>
+                                        <div className={`flex flex-col w-[650px] py-3`}>
+                                            <div className={`min-h-[40px]`}>
+                                                <h2 className={`font-poppins text-white mt-3 text-[25px] mb-2 max-w-[650px]`}>{epi.title}</h2>
                                             </div>
 
-                                            <div className={`h-[130px] mt-4`}>
-                                                <p className={`font-poppins text-white text-[11px] max-w-[650px]`}>{epi.description}</p>
+                                            <div className={`min-h-[100px] mt-2`}>
+                                                <p className={`font-poppins text-white text-[14px] max-w-[650px]`}>{epi.description}</p>
                                             </div>
-                                            <div className={`flex flex-row h-[30px]`}>
+                                            <div className={`flex flex-row min-h-[20px] mt-2`}>
                                                 <h4 className={`font-poppins text-white text-[12px]`}>{Convert(epi.length)}</h4>
                                                 <h4 className={`font-poppins text-white text-[12px] ml-8`}>{epi.published_date}</h4>
                                                 

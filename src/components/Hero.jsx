@@ -94,7 +94,7 @@ const Hero = () => {
         </ul>
         </div>
 
-        <div className={` mt-2 md:mt-8`}>
+        <div className={` mt-2 md:mt-8 flex `}>
           <button className={`w-[170px] h-[55px] bg-blue-500 rounded-[10px] font-poppins text-xl text-white`} onClick={() => setSModal(true)}>SUBSCRIBE</button>
         </div>
 

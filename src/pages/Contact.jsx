@@ -4,6 +4,7 @@ import styles from '../style'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Contact from '../components/Contact'
+import Partners from '../components/Partners'
 
 const contact = () => {
   return (
@@ -17,6 +18,11 @@ const contact = () => {
         <div className={`bg-primary mb-12 md:mb-36 ${styles.paddingX}  ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
               <Contact/>
+          </div>
+        </div>
+        <div className={`bg-primary mb-12 md:mb-36 ${styles.paddingX}  ${styles.flexStart}`}>
+          <div className={`${styles.boxWidth}`}>
+              <Partners/>
           </div>
         </div>
 

@@ -4,7 +4,8 @@ import Hero from '../components/Hero'; // Importing the custom Hero component
 import Footer from '../components/Footer'; // Importing the custom Footer component 
 import LastEpisodes from '../components/LastEpisodes'; // Importing the custom LastEpisodes component 
 import Listen from '../components/Listen';
-import styles from '../style'; // Importing the local style file
+import styles from '../style'; // Importing the local style fil
+import Partners from '../components/Partners';
 
 
 const Home = () => { // Creating a functional component called Home
@@ -32,9 +33,14 @@ const Home = () => { // Creating a functional component called Home
       </div>
 
       {/* Third section of the page */}
-      <div className={`bg-primary md:mb-36 mb-12 ${styles.flexStart} ${styles.paddingX}`}>
+      <div className={`bg-primary   ${styles.flexStart} ${styles.paddingX}`}>
         <div className={`${styles.boxWidth}`}>
           <LastEpisodes/> 
+        </div>
+      </div>
+      <div className={`bg-primary md:mb-36 mb-12 ${styles.flexStart} ${styles.paddingX}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Partners/> 
         </div>
       </div>
 

@@ -36,6 +36,9 @@ import overcastPodcast from "./overcastPodcast.webp";
 import twitter from './twitter.png';
 import linkedin from "./linkedin.png";
 import success from "./success.png";
+import qlegal from './qlegal.jpeg';
+import qmul from './qmul.png';
+import team_pic from './team.jpg';
 
 export {
   airbnb,
@@ -76,4 +79,7 @@ export {
   twitter,
   linkedin,
   success,
+  qlegal,
+  qmul,
+  team_pic,
 };

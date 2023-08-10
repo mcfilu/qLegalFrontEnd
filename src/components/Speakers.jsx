@@ -61,12 +61,12 @@ const Speakers = () => {
             <div className={`flex flex flex-col place-content-center items-center ${year === cu_year ? '' : 'hidden'}`}>
                 {
                     yearly_speakers[cu_year].map((item, index) => (
-                        <div className={`flex bg-black-gradient w-[1000px] h-[200px] rounded-[10px] mt-16 `}>
-                            <div className={`w-[200px]`}>
-                                <img src={item.image} className={`w-[150px] h-[150px] rounded-full ml-6 mt-7`}></img>
+                        <div className={`flex bg-black-gradient w-[1000px] min-h-[200px] rounded-[10px] mt-16 `}>
+                            <div className={`w-[200px] flex items-center justify-center`}>
+                                <img src={item.image} className={`w-[160px] h-[160px] rounded-full object-cover`}></img>
                             </div>
-                            <div className={`flex flex-col w-[700px] mr-3`}>
-                                <h1 className={`text-white font-poppins text-[25px] mt-4 ml-4`}>{item.name} {item.surname}</h1>
+                            <div className={`flex flex-col w-[700px] py-4`}>
+                                <h1 className={`text-white font-poppins text-[25px]  ml-4`}>{item.name} {item.surname}</h1>
                                 <p className={`text-white font-poppins text-[15px] mt-4 ml-4`}>{item.description}</p>
                             </div>
                             <div className='w-[100px] flex flex-col items-center justify-center'>
