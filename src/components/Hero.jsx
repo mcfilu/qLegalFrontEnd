@@ -31,7 +31,7 @@ const Hero = () => {
 
     useEffect(() => {
       axios
-      .get("https://server.yourslawfully.com/api/social_media_links/")
+      .get("https://system.yourslawfully.co.uk/api/social_media_links/")
         .then(res => setSM(res.data))
         .catch((err) => console.log(err));
       console.log(sm);

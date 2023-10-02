@@ -15,7 +15,7 @@ const Speakers = () => {
 
     useEffect(() => {
         axios
-        .get("https://server.yourslawfully.com/api/speakers/")
+        .get("https://system.yourslawfully.co.uk/api/speakers/")
            .then(res => setSpeakers(res.data))
            .catch((err) => console.log(err));
         

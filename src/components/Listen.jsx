@@ -8,7 +8,7 @@ const Listen = () => {
 
     useEffect(() => {
         axios
-            .get("https://server.yourslawfully.com/api/podcast_links/")
+            .get("https://system.yourslawfully.co.uk/api/podcast_links/")
                 .then(res => setMedia(res.data))
                     .catch((err) => console.log(err));
     })

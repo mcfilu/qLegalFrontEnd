@@ -16,7 +16,7 @@ const About = () => {
 
     useEffect(() => {
         axios
-        .get("https://server.yourslawfully.com/api/team/")
+        .get("https://system.yourslawfully.co.uk/api/team/")
            .then(res => setTeam(res.data))
            .catch((err) => console.log(err));
         

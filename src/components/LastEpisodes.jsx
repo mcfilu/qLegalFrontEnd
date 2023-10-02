@@ -67,7 +67,7 @@ const LastEpisodes = () => {
 
     useEffect(() => {
         axios
-        .get("https://server.yourslawfully.com/api/episodes/")
+        .get("https://system.yourslawfully.co.uk/api/episodes/")
            .then(res => {
             const reversedEpisodes = res.data.reverse();
             setEpisodes(reversedEpisodes);

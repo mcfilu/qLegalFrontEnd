@@ -62,14 +62,14 @@ const Episodes = () => {
 
     useEffect(() => {
         axios
-        .get("https://server.yourslawfully.com/api/episodes/")
+        .get("https://system.yourslawfully.co.uk/api/episodes/")
            .then(res => setEpisodes(res.data))
            .catch((err) => console.log(err));
         
     }, []);
     useEffect(() => {
         axios
-        .get("https://server.yourslawfully.com/api/podcast_links/")
+        .get("https://system.yourslawfully.co.uk/api/podcast_links/")
            .then(res => setLinks(res.data))
            .catch((err) => console.log(err));
         
